@@ -4,7 +4,7 @@ An app for converting currencies.
 
 This app was written with React.js.
 
-To run the app, simply,
+#To run the app, simply,
 
 --install node
 
