@@ -12,7 +12,7 @@ export default function App() {
     <div>
       <Navbar />
       <Route exact path="/" component={Home} />
-      <Route exact path="/add" component={AddCurrency} />
+      <Route exact path="/currency-converter/add" component={AddCurrency} />
       <Footer />
     </div>
   );

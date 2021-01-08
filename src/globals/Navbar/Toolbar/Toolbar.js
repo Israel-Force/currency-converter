@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import logo from "../../../assets/img/logo.png";
-import { Links } from "../../../components/styledComponents";
+import logo from '../../../assets/img/logo.png';
+import { Links } from '../../../components/styledComponents';
 
 export default function Toolbar() {
   const handleClick = () => {
-    window.location = "/";
+    window.location = '/';
   };
   return (
     <Wrapper>
@@ -17,16 +17,16 @@ export default function Toolbar() {
         <li>
           <a
             href={
-              window.location.pathname === "/add"
-                ? "/#currencies"
-                : "#currencies"
+              window.location.pathname === '/add'
+                ? '/#currencies'
+                : '#currencies'
             }
           >
             Available currencies
           </a>
         </li>
         <li>
-          <a href="/add">Add currency</a>
+          <a href="/currency-converter/add">Add currency</a>
         </li>
         <li>
           <a href="https://israel-force.github.io/cv-web">About us</a>
