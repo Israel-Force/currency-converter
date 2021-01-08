@@ -24,6 +24,10 @@ export default function AddCurrency() {
     numValue = document.querySelector('#toOneDollar');
   }, [add]);
 
+  React.useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
   const handleChange = (name, value) => {
     setAdd({ ...add, [name]: value });
   };
