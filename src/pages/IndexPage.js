@@ -95,9 +95,7 @@ export default function IndexPage() {
           handleInputChange={handleInputChange}
         />
         <IndexTwo changeState={changeState} />
-        <LinkButton to={`${process.env.PUBLIC_URL}/add`}>
-          ADD CURRENCY
-        </LinkButton>
+        <LinkButton to="/add">ADD CURRENCY</LinkButton>
       </div>
     </div>
   );
