@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import './styles/index.scss';
 import Navbar from './globals/Navbar/Navbar';
@@ -12,7 +12,7 @@ export default function App() {
     <div>
       <Navbar />
       <Route exact path="/" component={Home} />
-      <Route exact path="/currency-converter/add" component={AddCurrency} />
+      <Route exact path="/add" component={AddCurrency} />
       <Footer />
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import logo from '../../../assets/img/logo.png';
@@ -26,7 +27,7 @@ export default function Toolbar() {
           </a>
         </li>
         <li>
-          <a href="/currency-converter/add">Add currency</a>
+          <Link to="/add">Add currency</Link>
         </li>
         <li>
           <a href="https://israel-force.github.io/cv-web">About us</a>
