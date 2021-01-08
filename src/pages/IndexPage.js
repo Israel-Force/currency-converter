@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Hero from '../globals/Hero';
 import coin from '../assets/img/bg-2.png';
 import { Context } from '../context/Context';
-import { Button, Wrapper } from '../components/styledComponents';
+import { LinkButton, Wrapper } from '../components/styledComponents';
 
 export default function IndexPage() {
   const { state } = React.useContext(Context);
@@ -80,10 +80,6 @@ export default function IndexPage() {
     }
   };
 
-  const handleClick = () => {
-    window.location = '/add';
-  };
-
   return (
     <div>
       <Hero home="true">
@@ -100,7 +96,7 @@ export default function IndexPage() {
           handleInputChange={handleInputChange}
         />
         <IndexTwo changeState={changeState} />
-        <Button onClick={handleClick}>ADD CURrENCY</Button>
+        <LinkButton to="/add">ADD CURRENCY</LinkButton>
       </div>
     </div>
   );
