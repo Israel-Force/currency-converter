@@ -5,7 +5,6 @@ import Hero from '../globals/Hero';
 import coin from '../assets/img/bg-2.png';
 import { Context } from '../context/Context';
 import { LinkButton, Wrapper } from '../components/styledComponents';
-import { Link } from 'react-router-dom';
 
 export default function IndexPage() {
   const { state } = React.useContext(Context);
@@ -96,7 +95,9 @@ export default function IndexPage() {
           handleInputChange={handleInputChange}
         />
         <IndexTwo changeState={changeState} />
-        <Link to="/add">ADD CURRENCY</Link>
+        <LinkButton to={`${process.env.PUBLIC_URL}/add`}>
+          ADD CURRENCY
+        </LinkButton>
       </div>
     </div>
   );

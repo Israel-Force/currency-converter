@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-import { Links } from "../../../components/styledComponents";
+import { Links } from '../../../components/styledComponents';
 
 export default function SideNav() {
   const [open, setOpen] = React.useState(false);
@@ -11,27 +12,27 @@ export default function SideNav() {
   };
 
   const changeRoute = () => {
-    window.location = "/";
+    window.location = '/';
   };
 
   return (
     <Wrapper>
       <div className="menu-btn" onClick={handleClick}>
         <span
-          className={open ? "menu-btn_burger open" : "menu-btn_burger"}
+          className={open ? 'menu-btn_burger open' : 'menu-btn_burger'}
         ></span>
       </div>
       <div>
         <h2 onClick={changeRoute}>Coin</h2>
         {open && (
-          <div className={open ? "aside" : "aside open"}>
+          <div className={open ? 'aside' : 'aside open'}>
             <Links sidenav="true">
               <li onClick={handleClick}>
                 <a
                   href={
-                    window.location.pathname === "/add"
-                      ? "/#currencies"
-                      : "#currencies"
+                    window.location.pathname === '/add'
+                      ? '/#currencies'
+                      : '#currencies'
                   }
                 >
                   Available Currencies
@@ -40,7 +41,7 @@ export default function SideNav() {
             </Links>
             <Links sidenav="true">
               <li onClick={handleClick}>
-                <a href="/add">Add currency</a>
+                <Link to="/add">Add currency</Link>
               </li>
               <li onClick={handleClick}>
                 <a href="https://israel-force.github.io/cv-web">About us</a>
@@ -64,7 +65,7 @@ const Wrapper = styled.div`
   }
   h2 {
     margin-left: 0.6rem;
-    font-family: "AvatarNormal";
+    font-family: 'AvatarNormal';
   }
   .aside {
     position: fixed;
@@ -98,7 +99,7 @@ const Wrapper = styled.div`
       transition: all 0.5s ease-in-out;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: -8px;
         width: 25px;
@@ -108,7 +109,7 @@ const Wrapper = styled.div`
       }
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 8px;
         width: 18px;

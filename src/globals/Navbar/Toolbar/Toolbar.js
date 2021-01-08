@@ -7,7 +7,7 @@ import { Links } from '../../../components/styledComponents';
 
 export default function Toolbar() {
   const handleClick = () => {
-    window.location = `https://israel-force.github.io${process.env.PUBLIC_URL}/#currencies`;
+    window.location = `https://israel-force.github.io${process.env.PUBLIC_URL}`;
   };
   return (
     <Wrapper>
