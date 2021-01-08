@@ -84,7 +84,7 @@ export default function AddCurrency() {
       setThumbs(true);
       setTimeout(() => {
         setThumbs(true);
-        window.location = `/${process.env.PUBLIC_URL}/#currencies`;
+        window.location = `https://israel-force.github.io/${process.env.PUBLIC_URL}/#currencies`;
       }, 1000);
     } else {
       e.preventDefault();

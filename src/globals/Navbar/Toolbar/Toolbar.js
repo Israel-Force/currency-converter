@@ -7,7 +7,7 @@ import { Links } from '../../../components/styledComponents';
 
 export default function Toolbar() {
   const handleClick = () => {
-    window.location = `/${process.env.PUBLIC_URL}`;
+    window.location = `https://israel-force.github.io/${process.env.PUBLIC_URL}`;
   };
   return (
     <Wrapper>
