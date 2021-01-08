@@ -80,7 +80,6 @@ export default function IndexPage() {
       setConvert({ to: value, amt: conversion });
     }
   };
-  console.log(process.env.PUBLIC_URL);
   return (
     <div>
       <Hero home="true">

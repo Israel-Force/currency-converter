@@ -1,18 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Hero from "../globals/Hero";
-import coin from "../assets/img/bg-2.png";
-import { Button } from "../components/styledComponents";
-import { Context } from "../context/Context";
-import thumb from "../assets/img/thumb.png";
+import Hero from '../globals/Hero';
+import coin from '../assets/img/bg-2.png';
+import { Button } from '../components/styledComponents';
+import { Context } from '../context/Context';
+import thumb from '../assets/img/thumb.png';
 
 export default function AddCurrency() {
   const { dispatch } = React.useContext(Context);
 
   const [add, setAdd] = React.useState({
-    code: "",
-    toOneDollar: "",
+    code: '',
+    toOneDollar: '',
   });
 
   const [thumbs, setThumbs] = React.useState(false);
@@ -20,8 +20,8 @@ export default function AddCurrency() {
   var codeValue;
   var numValue;
   React.useEffect(() => {
-    codeValue = document.querySelector("#code");
-    numValue = document.querySelector("#toOneDollar");
+    codeValue = document.querySelector('#code');
+    numValue = document.querySelector('#toOneDollar');
   }, [add]);
 
   const handleChange = (name, value) => {
@@ -29,7 +29,7 @@ export default function AddCurrency() {
   };
 
   const required = (field, reg, msg, err, e) => {
-    if (field.value === "") {
+    if (field.value === '') {
       field.nextElementSibling.innerHTML = msg;
       e.preventDefault();
       return false;
@@ -38,7 +38,7 @@ export default function AddCurrency() {
       e.preventDefault();
       return false;
     } else {
-      field.nextElementSibling.innerHTML = "";
+      field.nextElementSibling.innerHTML = '';
       return true;
     }
   };
@@ -54,15 +54,15 @@ export default function AddCurrency() {
     check1 = required(
       codeValue,
       regularEx.code,
-      "This field cannot be left empty",
-      "Code can only be letters and 3 characters long",
+      'This field cannot be left empty',
+      'Code can only be letters and 3 characters long',
       e
     );
     check2 = required(
       numValue,
       regularEx.num,
-      "This field cannot be left empty",
-      "This field can only be numbers",
+      'This field cannot be left empty',
+      'This field can only be numbers',
       e
     );
     return true;
@@ -74,7 +74,7 @@ export default function AddCurrency() {
     if (check1 && check2) {
       const { code, toOneDollar } = add;
       dispatch({
-        type: "UPDATE_DATA",
+        type: 'UPDATE_DATA',
         payload: {
           code: code.toUpperCase(),
           toOneDollar,
@@ -84,7 +84,7 @@ export default function AddCurrency() {
       setThumbs(true);
       setTimeout(() => {
         setThumbs(true);
-        window.location = "/#currencies";
+        window.location = `/${process.env.PUBLIC_URL}/#currencies`;
       }, 1000);
     } else {
       e.preventDefault();
@@ -109,7 +109,7 @@ export default function AddCurrency() {
 const Thumbs = ({ thumbs }) => {
   return (
     <ThumbsUp>
-      <figure className={thumbs ? "clicked" : ""}>
+      <figure className={thumbs ? 'clicked' : ''}>
         <img src={thumb} alt="thumb" />
       </figure>
     </ThumbsUp>
@@ -209,11 +209,11 @@ const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: ${(props) => (props.hero ? 0 : "4rem 0")};
-  background: ${(props) => (props.add ? props.clr : "#f7f7f7")};
+  padding: ${(props) => (props.hero ? 0 : '4rem 0')};
+  background: ${(props) => (props.add ? props.clr : '#f7f7f7')};
   h1 {
     font-weight: bold;
-    font-family: "AvertaDemoPERegular";
+    font-family: 'AvertaDemoPERegular';
     font-size: 1.8rem;
     color: #253031;
     margin-bottom: 0.4rem;
@@ -252,15 +252,15 @@ const Wrapper = styled.section`
     }
   }
   @media only screen and (min-width: 768px) {
-    flex-direction: ${(props) => (props.add ? props.dir : "row")};
+    flex-direction: ${(props) => (props.add ? props.dir : 'row')};
     justify-content: center;
     align-items: center;
     text-align: left;
     figure {
       width: 100px !important;
-      margin-right: ${(props) => (props.add ? "0" : "10rem")};
-      margin-left: ${(props) => (props.add ? "10rem" : "0")};
-      margin-top: ${(props) => (props.add ? props.mg : "0")};
+      margin-right: ${(props) => (props.add ? '0' : '10rem')};
+      margin-left: ${(props) => (props.add ? '10rem' : '0')};
+      margin-top: ${(props) => (props.add ? props.mg : '0')};
     }
   }
 `;
